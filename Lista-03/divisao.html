@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--3. Fazendo divisão
+
+Faça uma calculadora que sabe somente fazer a operação de divisão, assim:
+
+a) Receba dois números
+
+b) Tenha o botão "Quociente" que quando clicado emitirá a mensagem "A divisão de N1 por N2 é: XXX", sendo que N1 é o primeiro número recebido, N2 é o segundo e XXX é o quociente da divisão.
+
+b) Tenha o botão "Resto" que quando clicado emitirá a mensagem "O resto da divisão de N1 por N2 é: XXX", sendo que N1 é o primeiro número recebido, N2 é o segundo e XXX é o resto da divisão.
+
+c) Tenha o botão "Completo" que quando clicado emitirá a mensagem "A divisão de N1 por N2 é: XXX e o resto dessa divisão é: YYY", sendo que N1 é o primeiro número recebido, N2 é o segundo, XXX é o quociente da divisão e YYY é o resto dessa divisão.
+
+-->
+
+Digite o primeiro Número
+<br>
+<input type="text" id="input_numero1">
+<br>
+<br>
+Digite o segundo Número
+<br>
+<input type="text" id="input_numero2">
+
+<button onclick="quociente()">Quociente</button>
+<button onclick="resto()">Resto</button>
+<button onclick="completo()">Completo</button>
+
+<div id="div_mensagem"></div>
+</body>
+</html>
+
+
+<script>
+    function quociente(){
+        div_mensagem.innerHTML = `A divisão de ${input_numero1.value} por ${input_numero2.value} é:
+          ${input_numero1.value / input_numero2.value}`
+    }
+    function resto(){
+        div_mensagem.innerHTML = `O resto da divisão de ${input_numero1.value} por ${input_numero2.value} é:
+          ${input_numero1.value % input_numero2.value}`
+    }
+
+    function completo(){
+        div_mensagem.innerHTML = `A divisão de ${input_numero1.value} por ${input_numero2.value} é:
+          ${input_numero1.value % input_numero2.value} e o Resto: ${input_numero1.value % input_numero2.value}`
+    }
+
+
+</script>

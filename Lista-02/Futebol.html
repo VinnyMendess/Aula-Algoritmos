@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 3. Futebol 
+Crie uma página que solicite ao usuário:
+
+Um campo para inserir o Nome do Time
+Um campo para inserir a Quantidade de Títulos que o clube possui
+Um botão com o texto "Amo meu time"
+Ao clicar no botão, uma caixa de alerta deve exibir a mensagem:
+"O time X tem Y títulos"
+(onde X é o nome do time e Y é a quantidade de títulos informada)
+-->
+
+<p>Insira o nome do time</p>
+<input id="input_time" type="text">
+
+<p>Insira a quantidade de títulos que o clube possui</p>
+<input id="input_quantidade_titulos" type="text">
+
+<button onclick="exibir_time()">Amo eu time</button>
+
+
+</body>
+</html>
+
+<script>
+
+    function exibir_time(){
+
+        alert("O time "+input_time.value+" tem "+input_quantidade_titulos.value+ " títulos")
+
+    }
+
+</script>

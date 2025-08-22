@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primeiro número
+    <input id="input_n1" type="number">
+    <br>
+    <br>
+    Segundo Número
+    <input id="input_n2" type="number">
+    <br>
+    <br>
+<button onclick="multiplicar()">Multiplicar</button>
+<button onclick="somar()">Somar</button>
+<button onclick="subtrair()">Subtrair</button>
+<button onclick="dividr()">Dividir</button>
+
+</body>
+</html>
+
+<script>
+     var n1 = input_n1.value
+    var n2 = input_n2.value
+    
+    function multiplicar(){
+       
+
+
+        var resultado = n1 * n2
+        alert('O resultado é: '+resultado)
+    }
+    function somar(){
+        
+
+
+        var resultado = (Number(n1) + Number(n2))
+        alert('O resultado é: '+resultado)
+    }
+    function subtrair(){
+        alert(' O resultado é: '+input_n1.value - input_n2.value)
+    }
+    function dividr(){
+        alert(' O resultado é: '+input_n1.value / input_n2.value)
+    }
+</script>

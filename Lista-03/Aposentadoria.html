@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 2. Aposentadoria: Quanto Falta?
+
+Crie um programa o qual:  
+
+a) Solicite a idade do usuário  
+
+b) Deve haver 2 botões abaixo: "Aposentadoria Homem" e "Aposentadoria Mulher"  
+
+c) No primeiro botão, calcule e exiba uma mensagem com o tempo que falta para se aposentar caso seja homem, considerando que um homem se aposenta com 70 anos  
+
+d) No segundo botão, calcule e exiba uma mensagem com o tempo que falta para se aposentar caso seja mulher, considerando que uma mulher se aposenta com 60 anos  
+
+
+-->
+
+
+Digite a sua idade
+<input type="text" id="input_idade">
+<br>
+<br>
+<button onclick="aposentadoriaHomem()">Aposentadoria Homem</button>
+<br>
+<br>
+<button onclick="aposentadoriaMulher()">Aposentadoria Mulher</button>
+<br>
+<br>
+
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    
+    function aposentadoriaHomem(){
+        div_mensagem.innerHTML = `Falta ${70 - input_idade.value} anos para o Senhor se aposentar`
+    }
+    function aposentadoriaMulher(){
+        div_mensagem.innerHTML = `Falta ${60 - input_idade.value} anos para Senhora se aposentar`
+    }
+
+
+</script>

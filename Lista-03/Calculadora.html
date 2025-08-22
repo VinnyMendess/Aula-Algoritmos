@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 1.  Calculadora Básica
+
+Crie um programa que:  
+
+a) Solicite 2 números ao usuário  
+
+b) tenha um botão para cada operação aritmética. Ao clicar em algum deles, exibir na página uma dessas frases:  
+
+   - A soma entre X e Y é Z  
+
+   - A diferença entre X e Y é Z  
+
+   - O produto entre X e Y é Z  
+
+   - A razão entre X e Y é Z         
+
+  -->
+
+
+
+
+
+
+
+
+
+    Primeiro número
+    <input id="input_n1" type="number">
+    <br>
+    <br>
+    Segundo Número
+    <input id="input_n2" type="number">
+    <br>
+    <br>
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="dividr()">Dividir</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+
+
+    <div id="div_mensagem">Mensagem Incial</div>
+
+</body> 
+</html>
+
+<script>
+    
+    
+
+    function multiplicar(){
+        div_mensagem.innerHTML =  `<h2>${input_n1.value} * ${input_n2.value} =  ${input_n1.value * input_n2.value}</h2>`
+        
+    }
+    function somar(){
+        div_mensagem.innerHTML =  `<h2>${input_n1.value} + ${input_n2.value} = ${Number(input_n1.value) + Number(input_n2.value)}</h2>`
+    }
+    function subtrair(){
+        div_mensagem.innerHTML =  `<h2>${input_n1.value} - ${input_n2.value} = ${Number(input_n1.value) - Number(input_n2.value)}</h2>`
+    }
+    function dividr(){
+        div_mensagem.innerHTML =  `<h2>${input_n1.value} / ${input_n2.value} =  ${input_n1.value / input_n2.value}</h2>`
+    }
+</script>
