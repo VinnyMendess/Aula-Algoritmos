@@ -8,7 +8,8 @@
 <body>
     <!-- 5. Economia com o Bilhete Único
 
-Um estudante recebeu o Bilhete Único de estudante pela primeira vez e deseja saber quanto vai economizar por mês. O valor para estudante é metade do valor da passagem. Crie um programa que:  
+Um estudante recebeu o Bilhete Único de estudante pela primeira vez e deseja saber quanto vai economizar por mês.
+ O valor para estudante é metade do valor da passagem. Crie um programa que:  
 
 a) Pergunte a ele o valor da passagem  
 
@@ -24,13 +25,23 @@ Quantas viagens você faráno mês:
 <input type="text" id="input_viagens">
 
 <button onclick="economia()">Ver Economia</button>
+
+<div id="div_exbir_texto"></div>
 </body>
 </html>
 
 
 <script>
-
-function economia(){
     
+function economia(){
+   var valorPassagem = input_valor_passagem.value
+   var viagens = input_viagens.value
+
+
+    var precoTotal = valorPassagem * viagens
+    var precoDesconto = (valorPassagem / 2) * viagens
+    var economia = Number( precoTotal- precoDesconto) 
+
+    div_exbir_texto.innerHTML = `Você economizará: <b>${economia}</b> `
 }
 </script>
