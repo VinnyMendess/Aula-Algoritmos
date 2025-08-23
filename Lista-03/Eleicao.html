@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<!-- 9. Eleição
+
+Crie um programa o qual:  
+
+a) Solicite a quantidade de votos que o "Candidato A" teve na eleição  
+
+b) Solicite a quantidade de votos que o "Candidato B" teve na eleição  
+
+c) Solicite a quantidade de votos brancos que houve na eleição  
+
+d) Solicite a quantidade de votos nulos que houve na eleição  
+
+e) Ao clicar em "Resultado da Eleição", exibir textos conforme o exemplo abaixo:  
+
+    Total de votos: 200  
+
+    Candidato A: 40% (80 votos)  
+
+    Candidato B: 35% (70 votos)  
+
+    Inválidos: 25% (50 votos)  
+
+A quantidade de votos "Inválidos" é a soma de brancos e nulos - valores colhidos nos itens c) e d) -  
+
+Não se preocupe em mostrar primeiro o "vencedor". Não temos como saber isso com o que aprendemos na programação até aqui ;)   
+
+Mostre os candidatos na ordem que quiser.    -->
+
+Digite quantidade de votos do Candidato A
+    <br>
+    <br>
+    <input type="number" id="input_candidato_A">
+    <br>
+    Digite quantidade de votos do Candidato B
+    <br>
+    <br>
+    <input type="number" id="input_candidato_B">
+    <br>
+    Digite quantidade de votos brancos
+    <br>
+    <br>
+    <input type="number" id="input_brancos">
+    <br>
+    Digite quantidade de votos brancos
+    <br>
+    <br>
+    <input type="number" id="input_nulos">
+    <br>
+    <br>
+    <button onclick="calcularVotos()">Resultado Eleição</button>
+
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcularVotos(){
+        var candidatoA = Number(input_candidato_A.value)
+        var candidatoB = Number(input_candidato_B.value)
+        var brancos = Number(input_brancos.value)
+        var nulos = Number(input_nulos.value)
+
+        var total = candidatoA + candidatoB + brancos + nulos 
+        var porcentagemCandidatoA = (candidatoA / total) * 100
+        var porcentagemCandidatoB = (candidatoB / total) * 100
+        var porcentagemBrancos = (brancos / total) * 100
+        var porcentagemNulos = (nulos / total) * 100
+        var invalidos = brancos + nulos
+        var porcentagemInvalidos = (invalidos / total) * 100
+       
+
+        div_exibir.innerHTML = `Total de votos ${total}% <br>
+        Candidato A: ${porcentagemCandidatoA}% (${candidatoA} votos) <br>
+        Candidato B: ${porcentagemCandidatoB}% (${candidatoB} votos) <br>
+        Inválidos: ${porcentagemInvalidos}% (${invalidos} votos)`
+    }
+
+</script>

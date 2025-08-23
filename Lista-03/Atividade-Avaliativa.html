@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- 6. Nota da Atividade Avaliativa
+Faça um programa para calcular o valor da nota da atividade avaliativa sendo:
+
+a) O nome do aluno
+
+b)  Pergunte o valor da Ativ. Avaliativa 1, Ativ. Avaliativa 2 e Ativ. Avaliativa 3
+
+c) Ao clicar no botão “Mostrar Nota” o programa deve emitir as seguintes mensagens:
+
+                A soma das suas três atividades é: 9999 
+
+                XXXX, a média das suas atividades é: 9999,9999 
+
+(OBS. XXXX é o nome do aluno) -->
+
+
+    Digite o seu nome: 
+    <br>
+    <input type="text" id="input_nome">
+    <br>
+    Digite o valor da atividade avaliativa 1
+    <br>
+    <input type="nunmber" id="input_att1">
+    <br>
+    Digite o valor da atividade avaliativa 2
+    <br>
+    <input type="nunmber" id="input_att2">
+    <br>
+    Digite o valor da atividade avaliativa 3
+    <br>
+    <input type="nunmber" id="input_att3">
+    <br>
+    <br>
+
+    <button onclick="nota()">Mostrar Nota</button>
+
+    <div id="div_exibir_texto"></div>
+    
+</body>
+</html>
+<script>
+
+    function nota(){
+        var nome = input_nome.value
+        var soma = Number(input_att1.value) + Number(input_att2.value) + Number(input_att3.value)
+        var media = soma / 3
+        div_exibir_texto.innerHTML = `A soma das suas três atividades é: ${soma} 
+        \n ${nome}, a média das suas atividades é: ${media}`
+    }
+
+
+</script>
