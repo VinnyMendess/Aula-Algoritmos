@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="background-color: gainsboro;">
+        <button onclick="incrementar1()">Incrementar</button>
+
+        <b id="b_contagem_1">0</b>
+
+        <button onclick="decrementar1()">Decrementar</button>
+    </div>
+
+<!-- ---------------------------------------------------------------------------------------  -->
+
+    <div style="background-color: lightsalmon;">
+        <button onclick="incrementar2()">Incrementar</button>
+
+        <b id="b_contagem_2">0</b>
+
+        <button onclick="decrementar2()">Decrementar</button>
+    </div>
+
+</body>
+</html>
+<script>
+
+
+    var contador = 0;
+    
+    function incrementar1(){
+        contador += 1;
+        b_contagem_1.innerHTML = contador;
+    }
+
+    function decrementar1(){
+        contador -= 1;
+        b_contagem_1.innerHTML = contador;
+    }
+
+
+
+    function incrementar2(){
+        contador += 100;
+        b_contagem_2.innerHTML = contador;
+    }
+
+    
+    function decrementar2(){
+        contador -= 10;
+        b_contagem_2.innerHTML = contador;
+    }
+</script>
