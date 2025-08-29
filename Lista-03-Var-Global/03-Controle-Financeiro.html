@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    
+    Digite o valor recebido da venda das peças
+    <br>
+    <input type="text" id="input_valor_recebido">
+    <br>
+    Digite o valor recebido da venda de serviços
+    <br>
+    <input type="text" id="input_valor_servicos">
+    <br>
+    Digite o percentual de imposto sobre os valores recebidos
+    <br>
+    <input type="text" id="input_impostos">
+    <br>
+    Digite o valor  dos gastos realizados no mês
+    <br>
+    <input type="text" id="input_valor_gastos">
+    <br>
+    
+    <button onclick="acumular()">Acumular</button>
+    <br>
+
+    <div id="div_exibir"></div>
+
+</body>
+</html> 
+<script>
+
+    var acumulado = 0
+    var mes = 0
+    function acumular(){
+
+        var total_recebido = Number(input_valor_recebido.value) + Number(input_valor_servicos.value)
+        var valor_imposto =  (Number(input_impostos.value) / 100) * total_recebido
+        var saldo_final = total_recebido - Number(input_valor_gastos.value) - valor_imposto
+        acumulado += saldo_final
+        mes ++
+
+        div_exibir.innerHTML += `<br>Resumo do mês de ${mes}: <br> Total recebido: R$${total_recebido.toFixed(2)}<br> Valor do Imposto: 
+        R$${valor_imposto.toFixed(2)}<br> Saldo Final de R$${saldo_final.toFixed(2)}<br> Acumulado até o momento: R$${acumulado}`
+    }
+
+</script> teclado

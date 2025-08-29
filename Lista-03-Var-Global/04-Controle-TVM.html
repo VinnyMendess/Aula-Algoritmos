@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    digite a quantidade de dias de operação
+    <br>
+    <input type="text" id="input_dias_operacao">
+    <br>
+    <button onclick="processar()">Processar Dias</button>
+    <br>
+    <br>
+    <button onclick="parar()">Stop Operação</button> <button onclick="reiniciar()">Reiniciar Processo</button>
+
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+
+<script>
+
+    var dia = 0
+    var tvm= 1000
+    var tvm_anterior = 0
+    function processar(){
+        dia = Number(input_dias_operacao.value) 
+
+        horas_operacao = dia * 24
+        tvm_anterior = tvm
+        tvm -=  horas_operacao
+    
+        
+
+        div_exibir.innerHTML += `<br>O TVM anterior era de ${tvm_anterior} horas, após ${dia} dias de operação o TVM passou para ${tvm} horas`
+    }
+
+
+    function parar(){
+
+        tvm_anterior = tvm
+        tvm -=  100
+        div_exibir.innerHTML += `<br>O TVM anterior era de ${tvm_anterior} horas, após o Stop de operação o TVM passou para ${tvm} horas`
+    }
+
+
+    function reiniciar(){
+        tvm = 1000
+        div_exibir.innerHTML += `<br>Ainda existia ${tvm} horas, com o einicio do processo o TVM passou para 1000 horas`
+    }
+
+</script>

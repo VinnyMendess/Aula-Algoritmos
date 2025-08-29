@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite o valor da passagem de ônibus:
+    <br>
+    <input type="text" id="input_passagem_onibus">
+    <br>
+    Digite a quantidade de viagens que você faz por mês
+    <br>
+    <input type="text" id="input_viagens_mes">
+    <br>
+    Digite a distância do trabalho até a sua casa (km)
+    <br>
+    <input type="text" id="input_distancia_trabalho_casa">
+    <br>
+    <button onclick="calcular_vt()">Calcular VT</button>
+    <br>
+    
+    <div id="div_exibir"></div>
+
+
+
+</body>
+</html>
+<script>
+
+    function calcular_vt(){
+        //declaração de variáveis local
+        var passagem = Number(input_passagem_onibus.value) 
+        var viagens = Number(input_viagens_mes.value)
+        var distancia = Number(input_distancia_trabalho_casa.value)
+        
+
+        viagens_app = viagens * 0.10
+
+        //onibus
+       
+       
+        
+
+
+        //app
+        
+        distancia_app = distancia * viagens_app
+        gasto_app = 0.75 * distancia_app 
+
+
+        viagens_onibus = viagens - viagens_app 
+        gasto_onibus = passagem * viagens_onibus
+
+        //total
+        gasto_total = gasto_onibus + gasto_app
+
+        div_exibir.innerHTML = `Você vai gastar R$ ${gasto_total.toFixed(2)} por mês com transporte`
+    }
+
+</script>

@@ -7,18 +7,26 @@
 </head>
 <body>
     
-    <button onclick="receber()">Receber 100</button>
+    <button onclick="receber100()">Receber 100</button>
     <br><br>
-    <button onclick="receber()">Pagar 50</button>
+    <button onclick="receber50()">Pagar 50</button>
     <br><br>
 
-    <div id="div" class="exibir"></div>
+    Saldo atual:<div id="div_exibir">0</div>
 </body>
 </html>
 
 <script>
+    var saldo = 0
 
-    function receber(){
+    function receber100(){
+        saldo += 100
+        div_exibir.innerHTML = `R$ ${saldo}`
+    }
+
+    function receber50(){
+        saldo -= 50
+        div_exibir.innerHTML = `R$ ${saldo}`
         
     }
 

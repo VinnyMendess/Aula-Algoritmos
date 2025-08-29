@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    Digite o valor depositado ou retirado:
+    <br>
+    <input type="text" id="input_valor">
+    <br>
+    <button onclick="depositar()">Depositar</button>
+    <br>
+    <button onclick="retirar()">Retirar</button>
+    <br>
+    
+    Saldo Atual:
+    <div id="div_exibir">0</div>
+
+</body>
+</html>
+<script>
+
+    var valor = 0
+    var saldo = 0
+
+    function depositar(){
+        valor = Number(input_valor.value) 
+        saldo += valor
+        div_exibir.innerHTML = `R$ ${saldo}`
+    }
+
+    function retirar(){
+        saldo -= valor
+        valor = Number(input_valor.value) 
+        div_exibir.innerHTML = `R$ ${saldo}`
+    }
+
+
+</script>
