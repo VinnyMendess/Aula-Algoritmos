@@ -81,10 +81,10 @@ Digite quantidade de votos do Candidato A
         var porcentagemInvalidos = (invalidos / total) * 100
        
 
-        div_exibir.innerHTML = `Total de votos ${total}% <br>
-        Candidato A: ${porcentagemCandidatoA}% (${candidatoA} votos) <br>
-        Candidato B: ${porcentagemCandidatoB}% (${candidatoB} votos) <br>
-        Inválidos: ${porcentagemInvalidos}% (${invalidos} votos)`
+        div_exibir.innerHTML = `Total de votos ${total} <br>
+        Candidato A: ${porcentagemCandidatoA.toFixed(2)}% (${candidatoA} votos) <br>
+        Candidato B: ${porcentagemCandidatoB.toFixed(2)}% (${candidatoB} votos) <br>
+        Inválidos: ${porcentagemInvalidos.toFixed(2)}% (${invalidos} votos)`
     }
 
 </script>
