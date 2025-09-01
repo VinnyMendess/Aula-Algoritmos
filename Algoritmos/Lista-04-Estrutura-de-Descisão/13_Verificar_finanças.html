@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    Digite o valor do seu saldo na conta bancária:
+    <br>
+    <input type="text" id="input_valor_conta">
+    <br>
+    <button onclick="verificarFinancas()">Verificar Finanças</button>
+    <br>
+
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+
+
+<script>
+
+    function verificarFinancas(){
+        var saldo = Number(input_valor_conta.value);
+        
+
+        if (saldo == 0 ){
+            div_exibir.innerHTML = `<h3 Style="color: #000">Conta zerada!</h3>`
+        }
+        
+        if (saldo < 0 ){
+            div_exibir.innerHTML = `<h3 Style="color: red">Está devendo os caras!</h3>`
+        }
+        
+        if (saldo > 0 ){
+            div_exibir.innerHTML = `<h3 Style="color: blue">Saldo positivo!!</h3>`
+        }
+    }
+
+</script>

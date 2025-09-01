@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a quantidade de KWh consumida no mês
+    <br>
+    <input type="text" id="input_quantidade_kwh">
+    <br>
+    <button onclick="calcular_luz()">Calcular conta de Luz</button>
+    <br>
+
+    <div id="div_exibor"></div>
+</body>
+</html>
+<script>
+
+    function calcular_luz(){
+        var kwh = Number(input_quantidade_kwh.value);
+        var luz = 0.85
+
+        var valor_final = kwh * luz
+
+        if (kwh < 100){
+            var valor_final = valor_final * 0.90
+        }
+
+        alert(" você vai pagar: R$"+ valor_final)
+        
+
+    }
+
+</script>

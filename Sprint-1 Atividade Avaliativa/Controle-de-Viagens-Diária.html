@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite a distância da Corrida (em KM)
+    <br>
+    <input type="text" id="input_distancia_corrida">
+    <br>
+    Digite o valor do pedágio:
+    <br>
+    <input type="text" id="input_pedagio">
+    <br>
+    Digite a Bandeira (1,2 ou 3):
+    <br>
+    <input type="number" id="input_bandeira">
+    <br>
+    <button onclick="acumular()">Acumular corrida realizada</button>
+
+
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+
+<script>
+    var corridas = 0;
+    var valor_corrida = 0;
+    var valor_corrida_anterior = 0;
+    
+
+    function acumular(){
+        var distancia = Number(input_distancia_corrida.value)
+        var pedagio = Number(input_pedagio.value)
+        var bandeira = Number(input_bandeira.value)
+
+        var distancia_corrida = distancia / 8;
+        valor_corrida  = distancia_corrida * 10
+
+        var desconto_e_pedagio = valor_corrida + pedagio;
+
+        corridas ++
+        
+        if (distancia > 50) {
+             desconto_e_pedagio = (valor_corrida * 0.90) + pedagio
+         }
+        if (bandeira == 1){
+                valor_corrida = desconto_e_pedagio * 0.965
+        }
+        if (bandeira == 2){
+                valor_corrida = desconto_e_pedagio * 1.117
+        }
+        if (bandeira == 3){
+                valor_corrida = desconto_e_pedagio *1.223
+        }
+        if (bandeira > 3){
+                 div_exibir.innerHTML = `erro de bandeira`
+        }
+
+         valor_corrida_anterior += valor_corrida
+         div_exibir.innerHTML += `<br>${corridas}° corrida de ${distancia.toFixed(2)}km com valor de
+          R$${valor_corrida.toFixed(2)}
+         - ACUMULADO DO DIA R$${valor_corrida_anterior.toFixed(2)}`
+
+    }
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite a último sitcom que já assistiu:
+    <br>
+    <input type="text" id="input_serie">
+    <br>
+    Digite o total de Eps que você assistu:
+    <br>
+    <input type="text" id="input_eps">
+    <br>
+    <button onclick="Verificar()">Verificar Nível</button>
+    
+
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+<script>
+
+    function Verificar(){
+        var nome = input_serie.value
+        var eps = Number(input_eps.value)
+
+        var horas_total = eps * 22
+
+        
+
+        if (horas_total > 30){
+            
+            div_exibir.innerHTML = `Uau, você realmente gosta de ${nome}`
+        }
+        
+        if (horas_total < 30){
+            div_exibir.innerHTML = `Vejo que você gosta de ${nome}`
+        }
+    }
+
+
+</script>

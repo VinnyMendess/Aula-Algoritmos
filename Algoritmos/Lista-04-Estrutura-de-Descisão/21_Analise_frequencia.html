@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite a frequência do aluno:
+    <br>
+    <input type="text" id="input_frequencia">
+    <br>
+    <button onclick="analisarFrequencia()">Analisar</button>
+    <br>
+
+    <div id="div_exibir"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function analisarFrequencia(){
+        var frequencia = Number(input_frequencia.value)
+
+        if (frequencia < 50){
+            div_exibir.innerHTML = `<img src="https://img.freepik.com/fotos-gratis/turista-com-o-polegar-para-cima_1368-7035.jpg">`
+        }
+        
+        if (frequencia >= 50){
+            div_exibir.innerHTML = `<img src="https://opiniaorh.com/wp-content/uploads/2013/06/mau-estudante.jpg">`
+        }
+    }
+
+</script>

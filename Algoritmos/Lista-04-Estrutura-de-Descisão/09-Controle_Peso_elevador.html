@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+
+
+    Digite a quantidade de homens que entraram no elevador:
+    <br>
+    <input type="text" id="input_homens_elevador">
+    <br>
+    
+    Digite a quantidade de mulheres que entraram no elevador:
+    <br>
+    <input type="text" id="input_mulheres_elevador">
+    <br>
+    
+    <button onclick="analisar_pesos()">Analisar Peso</button>
+
+    <div id="div_exibir"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function analisar_pesos(){
+        var homens = Number(input_homens_elevador.value);
+        var mulheres = Number(input_mulheres_elevador.value);
+
+        var peso_homem = homens * 80
+        var peso_mulheres = mulheres * 60
+        var peso_total = peso_homem + peso_mulheres
+
+        if (peso_total > 800){
+            div_exibir.innerHTML = `<div Style=" color: blue">Será necessário que alguém desça para que o elevador se movimente</div>`
+        }
+        if(peso_total < 800){
+            div_exibir.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${peso_total} Kg`
+        }
+
+    }
+
+</script>

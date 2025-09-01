@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite quantas latinhas de refrigeirante você toma por dia:
+    <br>
+    <input type="text" id="input_latinhas_refrigeirante">
+    <br>
+    <button onclick="calcular()">Quantos Refris?</button>
+
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+
+    function calcular(){
+        var latas_dia = Number(input_latinhas_refrigeirante.value)
+        var latas_ano = latas_dia * 365
+
+        div_exibir.innerHTML += `Você toma : ${latas_ano} latas de refri por ano!`
+
+        if (latas_ano > 500){
+
+            div_exibir.innerHTML += `<br>Cuidade com a Diabetes!`
+        }
+    }
+</script>
+

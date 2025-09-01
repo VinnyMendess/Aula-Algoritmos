@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- O Objetivo desse sistema é apenas simular o quanto o nosso cliente perderia sem
+     e economizaria com o nosso produrto-->
+
+
+    Digite a área da plantação:
+    <br>
+    <input type="text" id="input_area_plantacao"> <!--Pergunta o tamanho por m² da plantaçãp-->
+    <br>
+     Produtividade média:  <!-- Pergunta quanto Kg de wasabi ele consegue produzir por metro quadrado -->
+    <br>
+    <input type="text" id="input_produtividade_media">
+    <br>
+    O preço do Wasabi está em torno de R$8.000,<br>
+    Gostaria de continuar com esse valor ou deseja editar?<br> <!-- Pergunto se ele quer adicionar um valor ou seguir com R$8000-->
+    Digite "Continuar" para o preço ser 8000, ou digite o valor:
+    <br>
+    <input type="text" id="input_valor_wasabi">
+    <br><br>
+    <button onclick="simular()">Simular</button>
+
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+<script>
+
+    function simular(){
+        var area_plantacao = Number(input_area_plantacao.value)
+        var preco_input  = input_valor_wasabi.value
+        var produtividade = Number(input_produtividade_media.value)
+        var perda_sem = 15
+        var perda_com = 5
+        var preco_wasabi
+        
+        if(preco_input == "Continuar" || preco_input == "continuar"){
+            preco_wasabi = 8000
+        } else{
+            preco_wasabi = Number(preco_input)
+        }
+        var producao = area_plantacao * produtividade
+        var receita = producao * preco_wasabi
+
+        var perda_sem_sistema = receita * (perda_sem/100)
+        var perda_com_sistema = receita * (perda_com/100)
+
+        var economia = perda_sem_sistema - perda_com_sistema
+        div_exibir.innerHTML = `
+        <br>- Produção ${producao} Kg
+        <br>- Receita Bruta R$ ${receita.toFixed(0)}
+        <br>- Perda sem o sistema R$ ${perda_sem_sistema.toFixed(0)} 
+        <br>- Perda com o sistema R$ ${perda_com_sistema.toFixed(0)}
+        <br>- Economia R$ ${economia.toFixed(0)}
+        `//Aqui simulamos as perdas com e sem o nosso sistema
+
+    }
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite o primeiro número:
+    <br>
+    <input type="text" id="input_numero_1">
+    <br>
+    Digite o segundo número
+    <br>
+    <input type="text" id="input_numero_2">
+    <br>
+    <button onclick="testar()">Testar</button>
+
+    <div id="div_exibir"></div>
+
+</body>
+</html>
+
+<script>
+
+    function testar(){
+        var numero_1 = Number(input_numero_1.value);
+        var numero_2 = Number(input_numero_2.value);
+
+        if(numero_1 % numero_2 == 0){
+            div_exibir.innerHTML = `<img src="https://assets.cuponomia.com.br/img/stores/medium/positivo-637843430836520719.png?v4">`
+        }
+        if(numero_1 % numero_2 > 0){
+            div_exibir.innerHTML = `<img src="https://s.dicio.com.br/negativo.jpg">`
+        }
+
+
+    }
+
+</script>
