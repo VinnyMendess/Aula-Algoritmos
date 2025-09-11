@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite um número:
+    <br>
+    <input type="text" id="input_num">
+    <br>
+    <button onclick="verificar()">verificar</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+
+
+<script>
+
+    function verificar(){
+        num = Number(input_num.value)   
+
+        if (num > 50){
+            div_mensagem.innerHTML = `<br>O número ${num} é maior que 50`
+
+             if (num > 75){
+
+            div_mensagem.innerHTML += `<br>O número ${num} é maior que 50 e também que 75`
+
+        }
+        } else{
+                
+            if(num == 50){
+                    div_mensagem.innerHTML += `EXATAMENTE 50`
+                }   
+
+             div_mensagem.innerHTML = `<br>O número ${num} é menor ou igual a 50`
+
+             if (num <= 25){
+
+            div_mensagem.innerHTML += `<br>O número ${num} é menor que 25 e também que 50`
+
+            }
+        }
+         
+       
+        
+        
+    }
+    
+
+
+</script>

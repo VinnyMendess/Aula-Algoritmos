@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Qual pokémon inicial você quer?
+    <br>
+    <select name="Pokémon" id="select_pokemon">
+        <option selected disabled value="#">Selecione um Pokémon</option>
+        <option value="Charmander">Charmander</option>    
+        <option value="Squirtle">Squirtle</option>
+        <option value="Bulbasaur">Bulbasaur</option>
+    </select>
+    <button onclick="escolher()">Escolher</button>
+    <br>
+    <div id="div_exibir"></div>
+    
+</body>
+</html>
+<script>
+
+    function escolher(){
+        var pokemon = select_pokemon.value
+
+        if(pokemon == "Charmander"){
+            div_exibir.innerHTML = `<img src="https://i.pinimg.com/564x/f6/1e/9b/f61e9b07a838395359d3ba7420e1f1fb.jpg"/>`
+        }else if(pokemon == "Squirtle"){
+            div_exibir.innerHTML = `<img src="https://makerworld.bblmw.com/makerworld/model/US814a242d37aed2/design/2024-02-28_a3e4320206bf58.png?x-oss-process=image/resize,w_1000/format,webp"/>`
+        }else if(pokemon == "Bulbasaur"){
+            div_exibir.innerHTML = `<img src="https://img.pokemondb.net/sprites/home/normal/2x/bulbasaur.jpg"/>`
+
+        }
+    }
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humor do Usuário</title>
+</head>
+<body>
+    Como você está se sentindo hoje?
+    <br>
+    <select id="select_humor">
+        <option selected disabled value="#">Selecione uma opção</option>
+        <option value="Feliz">Felz</option>
+        <option value="Triste">Triste</option>
+        <option value="Bravo">Bravo</option>
+        <option value="Surpreso">Surpreso</option>
+        <option value="Cansado">Cansado</option>
+    </select>
+    <br><br>
+    <button onclick="mostrar()">Mostrr Humor</button>
+    <br><br>
+    <div id="div_exibir"></div>
+</body>
+</html>
+
+<script>
+function mostrar(){
+    var humor = select_humor.value
+
+    if (humor == "Feliz"){
+        div_exibir.innerHTML = `😊`
+    } else if (humor == "Triste"){
+        div_exibir.innerHTML = `😢`
+    } else if (humor == "Bravo"){
+        div_exibir.innerHTML = `😡`
+    } else if (humor == "Surpreso"){
+        div_exibir.innerHTML = `😲`
+    } else if (humor == "Cansado"){
+        div_exibir.innerHTML = `😴`
+    } else {
+        div_exibir.innerHTML = `Escolha uma opção`
+    }
+}
+</script>

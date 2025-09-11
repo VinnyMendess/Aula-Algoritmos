@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual time você torce?
+    <br>
+    <select name="Times" id="select_time">
+        <option selected disabled value="#">Selecione Uma opção</option>
+        <option value="São Paulo">São Paulo</option>
+        <option value="Palmeiras">Palmeiras</option>
+        <option value="Corinthians">Corinthians</option>
+        <option value="Santos">Santos</option>
+      
+    </select>
+    <br>
+    <button onclick="exibir()">Fale Sobre esse time</button>
+
+    <div id="div_exibir"></div>
+
+
+</body>
+</html>
+
+<script>
+    
+    function exibir(){
+        var time = select_time.value
+
+        if (time == "Corinthians" ){
+            div_exibir.innerHTML = `<h1 style="backgroundColor: black; color: white">Salve o Corinthians</h1>`
+        }
+        else if (time == "Palmeiras" ){
+           div_exibir.innerHTML = `<p style="backgroundColor: green; color: white" >Porquinho</p>`
+        }
+        else if(time == "Santos" ){
+            div_exibir.innerHTML = `<p style="backgroundColor: white; color: black">Peixinho</p>`
+        }
+        else if(time == "São Paulo" ){
+            div_exibir.innerHTML = `<p style="backgroundColor: black; color: red">Bambi</p>`
+        }else{
+            div_exibir.innerHTML = `escolha alguma opção`
+        }
+    }
+</script>

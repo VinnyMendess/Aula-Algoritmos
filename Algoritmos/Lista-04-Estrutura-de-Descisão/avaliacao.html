@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliacao</title>
+</head>
+<body>
+<h1>lorinda e Chico</h1>   
+Qual a quantidade de consumo de kWh? <br> <br>
+<input id="input_kwh" type="number"><br> <br>
+Qual sua bandeira tarifária da energia? 1 = verde 2 = vermelha<br> <br>
+<input id="input_bandeira" type="text"> <br> <br>
+Qual a sua quantidade de MB (megabyte) do plano de internet?<br> <br>
+<input id="input_mb" type="number"><br> <br>
+<button onclick="gasto_total()">Calcular despesas</button><br> <br>
+<div id="div_mensage1"></div> <br>
+<div id="div_mensage2"></div> <br> <br>
+<div id="div_mensage3"></div> <br> <br> <br>
+</body>
+
+<script>
+    function gasto_total(){
+        var kwh = Number(input_kwh.value)
+        var bandeira = Number(input_bandeira.value)
+        var mb = Number(input_mb.value)
+
+        if (bandeira = 1) {
+            var bandeira = 'verde'
+            var calculo_bandeira = kwh * 0.75
+        }
+
+        if (bandeira = 2) {
+            var bandeira = 'vermelha'
+            var calculo_bandeira = kwh *0.115
+        }
+
+        var gasto_total_kwh = kwh 
+
+        if (mb <= 200 ) {
+            var calculo_mb = (mb + 40)
+        }
+
+        if (mb > 200) {
+            var calculo_mb = (mb - 40)
+        }
+
+        var gasto_total_mb = calculo_mb
+        var gasto_total = calculo_mb + calculo_bandeira
+        var porcentagem_kwh = gasto_total * (kwh/100)
+        var porcentagem_mb = gasto_total * (mb/100)
+
+        div_mensage1.innerHTML += ("Gasto total de despesas mensal:" + "R$" + (gasto_total))
+
+        div_mensage2.innerHTML += ("Com o consumo de" + (kwh) + "kWh na bandeira" + (bandeira) + "a conta de energia totaliza R$" + (gasto_total) + ", representando" + (porcentagem_kwh)+ "% do total de despesas")
+
+        div_mensage3.innerHTML += ("Com o consumo de" + (mb) + "MB de internet, o valor do plano de internet totaliza R$"+ (gasto_total_mb) +", representando"+ (porcentagem_mb)+  "% do total de despesas")
+    }
+</script>
+</html>

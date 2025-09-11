@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Digite sua meta de economia <br>
+    <input type="text" id="input_meta">
+    <br>
+    Digite o dinheiro guardado
+    <br>
+    <input type="text" id="input_dinheiro">
+    <br>
+    <button onclick="analisar()">Analisar Economia</button>
+    <br>
+    <div id="div_exibir"></div>
+</body>
+
+</html>
+<script>
+
+    function analisar(){
+        var meta = Number(input_meta.value)
+        var dinheiro = Number(input_dinheiro.value)
+
+        if(dinheiro == meta){
+            div_exibir.innerHTML = `Parabéns meta alcançada!`
+        }else if(dinheiro > meta){
+            dinheiro = dinheiro - meta
+            div_exibir.innerHTML = `Meta ultrapassada em ${dinheiro}!`
+        }else{
+            dinheiro = meta - dinheiro
+        div_exibir.innerHTML = `Força! Ainda em busca da meta! Falta ${dinheiro}`
+            
+        }
+    }
+</script>

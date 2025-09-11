@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite quantos pães franceses você come por dia
+    <br>
+    <input type="number" id="input_paes">
+    <br>
+    Digite quantos oacites de bolacha recheada você come:
+    <br>
+    <input type="number" id="input_pacotes">
+    <br>
+     Digite quantos copos de achocolatado você toma: 
+    <br>
+    <input type="number" id="input_achocolatado">
+    <br>
+    <button onclick="exibir()">Verificar Calorias</button>
+
+    <div id="div_exibir"></div>
+
+
+</body>
+</html>
+
+<script>
+    
+    function exibir(){
+        var paes = Number(input_paes.value)
+        var pacotes = Number(input_pacotes.value)
+        var achocolatado = Number(input_achocolatado.value)
+
+        var paes_calorias = 50
+        var pacotes_calorias = 80
+        var achocolatado_calorias = 70
+
+        var total = (paes_calorias * paes) + (pacotes_calorias * pacotes) + (achocolatado_calorias * achocolatado) 
+
+
+        if (total < 200 ){
+            div_exibir.innerHTML = `Parabéns, vai ficar em forma!`
+        }
+        else if (total > 400 ){
+           div_exibir.innerHTML = `Alerta crítico de saúde !!!`
+        }
+       
+        else{
+            div_exibir.innerHTML = `Cuidado, vai ficar menos saudáve`
+        }
+    }
+</script>
